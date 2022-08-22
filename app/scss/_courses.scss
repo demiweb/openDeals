@@ -1,0 +1,989 @@
+.course-hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  .container {
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .container-m {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .img-triangle {
+      margin-left: auto;
+      width: 205px;
+      height: auto;
+      position: absolute;
+      bottom: 40px;
+      left: 20px;
+
+      img, svg {
+        width: 100%;
+        height: auto;
+
+        linearGradient {
+          --col1: #FF0000;
+          --col2: #2621FF;
+        }
+
+        .col1 {
+          stop-color: var(--col1);
+        }
+
+        stop:not(.col1) {
+          stop-color: var(--col2);
+        }
+      }
+    }
+  }
+
+  .cont-svg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .line {
+      position: absolute;
+      top: 100px;
+      width: 84%;
+      height: 1px;
+      left: 8%;
+      background: #fff;
+      transition: opacity 0.4s ease;
+
+      p {
+        position: absolute;
+        top: 10px;
+        color: #fff;
+        font-family: $second-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        opacity: 0;
+        transition-delay: 0.7s;
+        transition: opacity 0.5s ease;
+
+        &:nth-child(1) {
+          left: 15px;
+        }
+
+        &:nth-child(2) {
+          left: 31%;
+        }
+
+        &:nth-child(3) {
+          left: 63%;
+        }
+
+        &:nth-child(4) {
+          left: 70%;
+        }
+
+        &:nth-child(5) {
+          left: auto;
+          right: 15px;
+        }
+      }
+
+      &.done {
+        opacity: 1;
+
+        p {
+          transition-delay: 1.2s;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+
+    .circle {
+      position: absolute;
+      z-index: 1;
+      bottom: 100px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 450px;
+      height: 450px;
+
+      svg {
+        width: 100%;
+        height: auto;
+
+        .llow {
+          stop-color: var(--colr);
+        }
+      }
+    }
+
+    .img {
+      position: absolute;
+      z-index: 2;
+      right: 85px;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 61vw;
+
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: flex-end;
+
+      img {
+        width: auto;
+        height: 100%;
+        max-height: 90%;
+        object-fit: contain;
+      }
+    }
+
+
+  }
+}
+
+.course-hero {
+  &.course-hero--1 {
+    .bg {
+      .img {
+        right: 0;
+      }
+
+    }
+
+    .container-m {
+      .img-triangle {
+        img, svg {
+          linearGradient {
+            --col1: #910D94;
+            --col2: #2621FF;
+          }
+        }
+      }
+    }
+  }
+
+  &.course-hero--2 {
+    .bg {
+
+      .img {
+        height: 80%;
+        right: 30px;
+      }
+
+    }
+
+    .container-m {
+      .img-triangle {
+        img, svg {
+          linearGradient {
+            --col1: #4020C2;
+            --col2: #00D0FF;
+          }
+        }
+      }
+    }
+  }
+
+  &.course-hero--3 {
+    .bg {
+      .img {
+        bottom: 0;
+        transform: translate(0, 0);
+        height: 90%;
+        right: 40px;
+        top: auto;
+      }
+
+    }
+
+    .container-m {
+      .img-triangle {
+        img, svg {
+          linearGradient {
+
+            --col1: #FF0000;
+            --col2: #FF006b;
+          }
+        }
+      }
+    }
+  }
+}
+
+.for-who {
+  width: 100%;
+  padding: 50px 0 100px;
+  position: relative;
+
+  .bg {
+    width: 195px;
+    height: auto;
+    position: absolute;
+    top: 20px;
+    right: 30%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .container-m {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.for-who__cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.forwho__list {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 28px;
+  margin-top: 65px;
+}
+
+.single-peoples {
+  width: calc(25% - (84px / 4));
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #6E7797;
+  backdrop-filter: blur(25px);
+  border-radius: 16px;
+  padding: 9px 9px 36px;
+  box-sizing: border-box;
+  .sp-cont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.6s linear;
+    transform-origin: 50% 50%;
+    > .img {
+      width: 100%;
+      padding-top: 85%;
+      height: 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  &:hover {
+    .sp-cont {
+      transform: perspective(1000px) rotateY(360deg);
+      transition: transform 0.6s linear;
+
+    }
+
+  }
+
+
+
+  .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2;
+
+    .img {
+      width: 123px;
+      height: 123px;
+      flex-shrink: 0;
+      overflow: hidden;
+      border-radius: 50%;
+      margin-top: -60px;
+      margin-bottom: 27px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    p {
+      width: 100%;
+      text-align: center;
+      max-width: 255px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #FFFFFF;
+      font-family: $second-font;
+    }
+  }
+}
+
+.course-hero__text {
+  max-width: 544px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  .tags {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 6px;
+
+    .tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8px 21px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 16px;
+      color: #331FF3;
+      background: #fff;
+      border-radius: 50px;
+      height: 35px;
+    }
+  }
+
+  h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 48px;
+    color: #FFFFFF;
+    margin: 39px 0 16px;
+
+    strong {
+      font-weight: inherit;
+      font-size: inherit;
+      color: var(--colrs);
+    }
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+    font-family: $second-font;
+    margin-bottom: 35px;
+  }
+}
+
+.traders {
+  width: 100%;
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 0;
+
+  .container-m {
+    position: relative;
+    z-index: 2;
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.traders__cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 13vw;
+}
+
+.single-trade {
+  width: 100%;
+  max-width: 403px;
+  margin-bottom: 11vw;
+
+  &:nth-child(2) {
+    margin-bottom: 9vw;
+  }
+
+  p {
+    font-family: $second-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+  }
+}
+
+
+.course-inner {
+  width: 100%;
+  padding: 122px 0 60px;
+  position: relative;
+
+  .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    .sixround {
+      position: absolute;
+      top: 0;
+      right: 19%;
+      margin-top: -30%;
+
+      img {
+        width: auto;
+        height: auto;
+      }
+    }
+
+    .buy {
+      bottom: 0;
+      left: 14%;
+      width: 35%;
+      height: auto;
+      position: absolute;
+      margin-bottom: -42%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .container-m {
+    z-index: 2;
+    position: relative;
+  }
+}
+
+.our-team {
+  z-index: 2;
+}
+
+@media screen and (max-width: 1700px) {
+  .course-inner .bg {
+    .sixround {
+      right: 20px;
+    }
+
+    .buy {
+      left: 20px;
+      margin-bottom: -50%;
+    }
+  }
+}
+
+.course-inner {
+  z-index: 1;
+}
+
+.course-inner__list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  .title {
+    width: 50%;
+    padding-right: 10px;
+    position: sticky;
+    top: 130px;
+
+    &::before {
+      width: 150%;
+      height: 0;
+      padding-top: 150%;
+      border-radius: 50%;
+      background: radial-gradient(50% 50% at 50% 50%, #6121C9 0%, rgba(0, 0, 0, 0) 100%);
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }
+}
+
+.list-inner {
+  width: 50%;
+
+  &.done {
+    opacity: 1;
+  }
+
+  ul {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: rgba(0, 0, 0, 0.12);
+    border: 1px solid #6E7797;
+    backdrop-filter: blur(18px);
+    border-radius: 15px;
+    padding: 50px 39px 50px 65px;
+    box-sizing: border-box;
+
+
+    li {
+      width: 100%;
+      padding-left: 80px;
+      margin-bottom: 30px;
+      position: relative;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 36px;
+      color: #FFFFFF;
+      opacity: 0;
+      transform: translate(0, 30px);
+      transition: opacity 0.3s ease, transform 0.4s ease;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        display: inline-block;
+        content: '';
+        background: url("../img/listr.svg") no-repeat center / 100%;
+      }
+
+      @for $i from 1 through 36 {
+        &:nth-child(#{$i}) {
+          transition-delay: calc(#{$i} * 0.07s);
+        }
+      }
+    }
+  }
+
+  &.done {
+    ul {
+      li {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1930px) {
+  .traders__cont {
+    margin-top: 18vw;
+  }
+  .single-trade {
+    margin-bottom: 15vw;
+  }
+}
+
+@media screen and (max-width: 1750px) {
+  .traders {
+    & + .our-team {
+      margin-top: 0;
+    }
+  }
+  .traders__cont {
+    margin-top: 11vw;
+  }
+  .single-trade {
+    margin-bottom: 10vw;
+
+    &:nth-child(2) {
+      margin-bottom: 7vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .single-trade p {
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+  .traders__cont {
+    margin-top: 10.5vw;
+  }
+  .single-trade {
+    margin-bottom: 12vw;
+
+    &:nth-child(2) {
+      margin-bottom: 9vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .single-trade p {
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+  .traders__cont {
+    margin-top: 4.5vw;
+  }
+  .single-trade {
+    margin-bottom: 9vw;
+
+    &:nth-child(2) {
+      margin-bottom: 9vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1390px) {
+  .single-trade p {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+
+  .traders__cont {
+    margin-top: 9.5vw;
+  }
+  .single-trade {
+    margin-bottom: 15vw;
+    max-width: 440px;
+
+    &:nth-child(2) {
+      margin-bottom: 8vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .course-hero__text {
+    max-width: 440px;
+
+    p {
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.2;
+    }
+  }
+  .btn.btn--order {
+    font-size: 22px;
+    line-height: 1.2;
+    padding: 14px 25px;
+    height: 55px;
+  }
+  .course-hero .cont-svg .line p:nth-child(3) {
+    left: 61%;
+  }
+  .course-hero .bg .circle {
+    width: 260px;
+    height: 260px;
+    bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .list-inner ul {
+    padding: 20px 30px 20px 30px;
+
+    li {
+      font-size: 18px;
+      line-height: 1.1;
+      padding-left: 60px;
+      margin-bottom: 20px;
+
+      &::before {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  .traders__cont {
+    margin-top: 9.5vw;
+  }
+  .single-trade {
+    margin-bottom: 12vw;
+    max-width: 440px;
+
+    &:nth-child(2) {
+      margin-bottom: 12vw;
+    }
+  }
+  .course-hero .cont-svg .line {
+    top: 70px;
+  }
+  .course-hero .cont-svg .line p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .traders__cont {
+    margin-top: 60px;
+  }
+  .traders {
+    overflow: hidden;
+
+    .bg {
+      display: none;
+
+      img {
+        width: 200%;
+
+      }
+    }
+  }
+  .single-trade {
+    margin-bottom: 40px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    padding-bottom: 40px;
+
+    &::after {
+      width: 100%;
+      height: 3px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #000000 4.48%, #2621FF 44.06%, #C14FEA 56.56%, #000000 94.58%);
+      display: inline-block;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 40px;
+
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .for-who .bg {
+    top: 40px;
+    width: 150px;
+  }
+  .forwho__list {
+    margin-top: 30px;
+  }
+  .single-peoples .text .img {
+    width: 65px;
+    height: 65px;
+    margin-top: -30px;
+    margin-bottom: 12px;
+  }
+  .single-peoples .text {
+    p {
+      font-size: 14px;
+      line-height: 1.2;
+    }
+  }
+  .for-who {
+    padding: 20px 0 50px;
+  }
+  .course-hero .container-m .img-triangle {
+    display: none;
+  }
+  .course-hero {
+    height: auto;
+    min-height: 550px;
+  }
+  .course-hero__text h1 {
+    font-size: 34px;
+    line-height: 1.1;
+    margin: 20px 0 14px;
+  }
+  .course-hero__text {
+    max-width: 380px;
+
+    p {
+      font-size: 16px;
+    }
+  }
+  .btn.btn--order {
+    font-size: 20px;
+    line-height: 1.1;
+    padding: 8px 20px;
+    height: 46px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .course-inner {
+    padding-bottom: 0;
+  }
+  .course-inner__list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    .title {
+      text-align: center;
+      position: relative;
+      top: auto;
+      width: auto;
+      margin-bottom: 30px;
+    }
+
+
+  }
+
+  .course-inner {
+    .bg {
+      .sixround {
+        right: 0;
+      }
+      .buy {
+        left: 0;
+        width: 60%;
+      }
+    }
+  }
+  .list-inner {
+    width: 100%;
+  }
+  .course-inner {
+    padding-top: 40px;
+  }
+
+  .course-hero__text p {
+    margin-bottom: 16px;
+  }
+  .course-hero .cont-svg {
+    display: none;
+  }
+  .course-hero__text .tags .tag {
+    padding: 5px 14px;
+    font-size: 13px;
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .forwho__list {
+    flex-wrap: wrap;
+  }
+  .single-peoples {
+    width: calc(50% - 14px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .list-inner ul {
+    padding: 20px 15px;
+    li {
+      font-size: 16px;
+      padding-left: 45px;
+    }
+  }
+  .traders__cont {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .single-trade {
+    margin-bottom: 20px;
+
+    p {
+      font-size: 16px;
+      line-height: 1.1;
+      text-align: center;
+    }
+  }
+  .single-peoples .text p {
+    font-size: 12px;
+    line-height: 1.1;
+  }
+  .course-hero {
+    min-height: 0;
+    height: 450px;
+
+    .bg {
+      .circle {
+        width: 50%;
+        height: auto;
+        left: auto;
+        right: 20px;
+        transform: translate(0, 0);
+        bottom: 15px;
+      }
+
+      .img {
+        display: none;
+      }
+    }
+  }
+  .course-hero .container-m {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+}
