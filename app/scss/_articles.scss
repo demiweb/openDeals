@@ -144,7 +144,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  & + .our-offers__courses {
+  &:has(.offers-text) + .our-offers__courses {
     margin-top: 0;
   }
 }

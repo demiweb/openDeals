@@ -162,8 +162,37 @@
   }
 }
 
+@keyframes movingBg {
+  0% {
+    top: -300%;
+  }
+  50% {
+    top: 0;
+  }
+  100% {
+    top: -300%;
+  }
+}
+
 .course-hero {
+  overflow: hidden;
+
+  &::before {
+    width: 100%;
+    height: 400%;
+    position: absolute;
+    z-index: -1;
+    display: inline-block;
+    content: '';
+    left: 0;
+    top: -300%;
+    animation: movingBg 18s linear infinite;
+  }
+
   &.course-hero--1 {
+    &::before {
+      background: linear-gradient(360deg, #000000 0%, #8927EB 25%, #000000 44%, #4021FF 50%, #8927EB 75%, #000000 100%);
+    }
     .bg {
       .img {
         right: 0;
@@ -184,6 +213,10 @@
   }
 
   &.course-hero--2 {
+    &::before {
+      background:  linear-gradient(360deg, #000000 0%, #4E27EB 25%, #000000 44%, #21D7FF 50%, #4E27EB 75%, #000000 100%);
+
+    }
     .bg {
 
       .img {
@@ -206,6 +239,14 @@
   }
 
   &.course-hero--3 {
+    //background: linear-gradient(360deg, #000000 0%, #EB2727 25%, #FF2199 50%, #EB2727 75%, #000000 0%);
+    background-size: 100%;
+    background-position: 0 50%;
+
+    &::before {
+      background: linear-gradient(360deg, #000000 0%, #EB2727 25%, #000000 44%, #FF2199 50%, #EB2727 75%, #000000 100%);
+    }
+
     .bg {
       .img {
         bottom: 0;
@@ -227,6 +268,19 @@
           }
         }
       }
+    }
+  }
+  .bg {
+    &::before {
+      width: 100%;
+      height: 26%;
+      display: inline-block;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: linear-gradient(to top, #000 10%, rgba(255, 255, 255, 0) 100%);
     }
   }
 }
@@ -280,6 +334,9 @@
   border-radius: 16px;
   padding: 9px 9px 36px;
   box-sizing: border-box;
+  transform: perspective(1000px);
+  transform-style: preserve-3d;
+
   .sp-cont {
     width: 100%;
     height: 100%;
@@ -288,6 +345,7 @@
     align-items: flex-start;
     transition: transform 0.6s linear;
     transform-origin: 50% 50%;
+
     > .img {
       width: 100%;
       padding-top: 85%;
@@ -295,6 +353,7 @@
       position: relative;
       overflow: hidden;
       border-radius: 16px;
+
 
       img {
         position: absolute;
@@ -306,15 +365,11 @@
       }
     }
   }
-  &:hover {
-    .sp-cont {
-      transform: perspective(1000px) rotateY(360deg);
-      transition: transform 0.6s linear;
 
-    }
+  &:hover {
+
 
   }
-
 
 
   .text {
@@ -325,6 +380,7 @@
     justify-content: flex-start;
     position: relative;
     z-index: 2;
+    transform: translateZ(10px);
 
     .img {
       width: 123px;
@@ -334,6 +390,7 @@
       border-radius: 50%;
       margin-top: -60px;
       margin-bottom: 27px;
+      transform: translateZ(30px);
 
       img {
         width: 100%;
@@ -343,6 +400,7 @@
     }
 
     p {
+      transform: translateZ(30px);
       width: 100%;
       text-align: center;
       max-width: 255px;
@@ -887,6 +945,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
     .title {
       text-align: center;
       position: relative;
@@ -903,6 +962,7 @@
       .sixround {
         right: 0;
       }
+
       .buy {
         left: 0;
         width: 60%;
@@ -941,6 +1001,7 @@
 @media screen and (max-width: 600px) {
   .list-inner ul {
     padding: 20px 15px;
+
     li {
       font-size: 16px;
       padding-left: 45px;
@@ -978,12 +1039,39 @@
       }
 
       .img {
-        display: none;
+        width: 70%;
+        right: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        img {
+          width: 200%;
+          flex-shrink: 0;
+          height: auto;
+        }
       }
     }
   }
   .course-hero .container-m {
     padding-top: 120px;
     padding-bottom: 40px;
+  }
+}
+
+.rules {
+  width: 100%;
+  padding: 100px 0;
+  .article-cont {
+    * {
+      color: #fff;
+    }
+
+  }
+}
+@media screen and (max-width: 780px) {
+  .rules {
+    padding: 40px 0;
   }
 }

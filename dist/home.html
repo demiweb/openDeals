@@ -18,7 +18,7 @@
 <body class="home">
 
 <div class="preloader">
-    <div class="preloader-logo">
+    <div class="preloader-logo" data-img="./img/modal-logo.png">
         <img src="./img/modal-logo.png" alt="">
     </div>
     <div class="preloader-line">
@@ -55,7 +55,7 @@
                         <li><a href="">обзоры</a></li>
 
                     </ul>
-                    <a href="" class="btn btn--red-blue btn--mod">начать обучение</a>
+                    <a href="" class="btn btn--red-blue btn--mod main-mod">начать обучение</a>
                 </div>
 
             </div>
@@ -324,7 +324,7 @@
                             признаться в своих поражениях и по-настоящему научить других так не делать. Опыт торговли
                             больше 7 лет.
                         </p>
-                        <span>
+                        <span data-tilt data-tilt-reset="false" data-tilt-full-page-listening>
                             Внимание - ТОРГОВЛИ, а не рисования прогнозов!
 
 
@@ -462,15 +462,15 @@
                         </div>
 
                     </div>
-                    <div class="right anim">
+                    <div class="right">
                         <div class="col">
-                            <div class="circular-number purple  ">
+                            <div data-num="1" class="circular-number anim">
                                 <div class="text">
                                     <p>299%</p>
                                     <span>прирост капитала наших учеников</span>
                                 </div>
                             </div>
-                            <div class="circular-number">
+                            <div data-num="2" class="circular-number anim">
                                 <div class="text">
                                     <p>2100%</p>
                                     <span>Бoлee 21 гoдa пpибыльнoй тopгoвли нa биpжe</span>
@@ -478,7 +478,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="circular-number">
+                            <div data-num="3" class="circular-number anim">
                                 <div class="text">
                                     <p>$2B</p>
                                     <span>Объем торгов</span>
@@ -691,15 +691,18 @@
     </section>
     <section class="our-offers">
         <div class="container-m anim">
-            <p class="big-title">
-                <strong>вы уже готовы?</strong>
-            </p>
-            <div class="our-offers__text">
-                <p>Мы собрали лучшие авторские
-                    программы для любого level.</p>
-                <p>Будь вы новичок или уже профессиональный инвестор, мы сможем Вам дать годный контент, чтобы повысить
-                    ваши навыки в трейдинге!</p>
+            <div class="offers-head">
+                <p class="big-title">
+                    <strong>вы уже готовы?</strong>
+                </p>
+                <div class="our-offers__text">
+                    <p>Мы собрали лучшие авторские
+                        программы для любого level.</p>
+                    <p>Будь вы новичок или уже профессиональный инвестор, мы сможем Вам дать годный контент, чтобы
+                        повысить
+                        ваши навыки в трейдинге!</p>
 
+                </div>
             </div>
             <div class="our-offers__courses counting-delay">
                 <div class="cours-wrap anim" data-anim-delay="0" data-anim-duration="820"
@@ -942,18 +945,7 @@
             </div>
         </div>
     </section>
-    <div class="music-waves">
-        <div class="container">
-            <div class="waves-cont">
-                <div class="top">
 
-                </div>
-                <div class="bot">
-
-                </div>
-            </div>
-        </div>
-    </div>
 </main>
 <footer class="footer ">
     <div class="footer-top">
@@ -970,7 +962,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-bot anim">
+    <div class="footer-bot">
         <div class="container">
             <div class="footer-bot__cont">
                 <div class="footer-col">
@@ -1006,6 +998,9 @@
 
             </div>
         </div>
+    </div>
+    <div class="footer-bot-activator anim">
+
     </div>
     <div class="footer-bg">
         <div class="bg">
@@ -1094,6 +1089,65 @@
 
     </div>
 </div>
+<div class="modal-window modal-main">
+    <div class="modal-logo">
+        <a href="">
+            <img src="./img/modal-logo.png" alt="">
+        </a>
+
+    </div>
+    <div class="close">
+        <img src="./img/x.png" alt="">
+
+    </div>
+    <div class="backplate"></div>
+    <div class="modal-container">
+        <div class="modal-top">
+
+            <div class="form">
+                <form action="">
+                    <div class="course-radio">
+                        <div class="radio-course_s">
+                            <label for="course-1"></label>
+                            <input type="radio" id="course-1" name="radio-course" checked>
+                            <p>OpenDeals <strong>start</strong></p>
+                        </div>
+                        <div class="radio-course_s">
+                            <label for="course-2"></label>
+                            <input type="radio" id="course-2" name="radio-course">
+                            <p>OpenDeals <strong>smart</strong></p>
+                        </div>
+                        <div class="radio-course_s">
+                            <label for="course-3"></label>
+                            <input type="radio" id="course-3" name="radio-course">
+                            <p>OpenDeals <strong>trade</strong></p>
+                        </div>
+                    </div>
+                    <span class="wrap-input required">
+                        <input type="text" required placeholder="ваше имя">
+                        <small>ваше имя</small>
+                    </span>
+                    <span class="wrap-input required">
+                        <input type="email" required placeholder="Email">
+                        <small>Email</small>
+                    </span>
+                    <span class="wrap-input required">
+                        <input type="tel" required placeholder="Телефон">
+                        <small>Телефон</small>
+                    </span>
+                    <span class="wrap-input ">
+                        <input type="text" placeholder="Страна">
+                        <small>Страна</small>
+                    </span>
+                </form>
+            </div>
+        </div>
+        <button class="very-big-btn">оплатить обучение</button>
+        <p>Наш сайт использует файлы cookies, это помогает нам предоставлять услуги, которые подходят именно вам.
+            Продолжая использовать наш сайт,вы даете согласие на работу с этими файлами</p>
+
+    </div>
+</div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 
 <script
@@ -1101,44 +1155,18 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
-/>
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
 <!--<script src="js/jquery.nice-select.min.js"></script>-->
 
 
-<script src="./libs/jquery.raty.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
 
 <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
 
 <script type="text/javascript" src="./libs/paroller.js"></script>
 <script src="./libs/marquee.js"></script>
-<script src="./libs/scrooth.js"></script>
-<script src="./libs/intlTelInput.js"></script>
+<script src="./libs/vanilla-tilt.js"></script>
 <script src="https://unpkg.com/image-compare-viewer@1.5.0/dist/image-compare-viewer.min.js"></script>
 
 <script type="text/javascript" class="main-script" src="./js/scripts.min.js"></script>
-
-
-<script>
-    var inputPhones = [...document.querySelectorAll(".telephone_hold")];
-    function createPhoneFlags() {
-        if (inputPhones.length) {
-            inputPhones.forEach((phone) => {
-                window.intlTelInput(phone, {
-                    // any initialisation options go here
-                    placeholderNumberType: 'aggressive',
-                    initialCountry: 'ua',
-                });
-            })
-        }
-    }
-    createPhoneFlags();
-
-
-</script>
 </body>
 </html>
