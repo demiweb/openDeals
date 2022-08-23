@@ -9,7 +9,7 @@
           rel="stylesheet">
     <link rel="stylesheet" href="./prevstyle/prevstyle.css">
 
-    <title>OpedDeals</title>
+    <title>OpenDeals</title>
 </head>
 <body>
 
@@ -89,7 +89,7 @@
         </div>
         <div class="header-cont">
             <div class="date-update">
-                <p><strong id="title"></strong> updated <span class="date" id="DATE">5.08.2022</span>, <small></small>
+                <p><strong id="title"></strong> updated <span class="date" id="DATE">20.08.2022</span>, <small></small>
                     pages</p>
             </div>
             <div class="type-of-size">
@@ -160,6 +160,7 @@
     </main>
 </div>
 <script>
+
     let title = document.title;
 
     document.getElementById('title').innerHTML = title;
@@ -167,7 +168,8 @@
     var iframe = document.getElementById('frame-frame');
     var body = document.querySelectorAll('body')[0];
     var previewWrapper = document.getElementById('frame');
-    let pagesArr = ['home', 'articles', 'article', 'op-start', 'op-smart', 'op-trade', 'rules'];
+
+    let pagesArr = ['home', 'articles', 'article', 'op-start', 'op-smart', 'op-trade', 'rules', 'letter'];
 
     let pgList = document.querySelector('.page-list ol');
 
