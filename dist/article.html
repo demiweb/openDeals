@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
 <body>
-<div class="preloader">
+<div class="preloader" style="display: none">
     <div class="preloader-logo" data-img="./img/modal-logo.png">
         <img src="./img/modal-logo.png" alt="">
     </div>
@@ -598,7 +598,7 @@
 
     </div>
 </div>
-<div class="modal-window modal-main">
+<div class="modal-window modal-main active">
     <div class="modal-logo">
         <a href="">
             <img src="./img/modal-logo.png" alt="">
@@ -641,12 +641,15 @@
                         <small>Email</small>
                     </span>
                     <span class="wrap-input required">
-                        <input type="tel" required placeholder="Телефон">
+                        <input type="tel" class="wpcf7-validates-as-tel" required placeholder="Телефон">
                         <small>Телефон</small>
                     </span>
                     <span class="wrap-input ">
                         <input type="text" placeholder="Страна">
                         <small>Страна</small>
+                    </span>
+                    <span class="hidden-input" style="display: block">
+                        <input type="text" name="full-numberPhone">
                     </span>
                 </form>
             </div>
@@ -675,7 +678,7 @@
 <script src="./libs/marquee.js"></script>
 <script src="./libs/vanilla-tilt.js"></script>
 <script src="https://unpkg.com/image-compare-viewer@1.5.0/dist/image-compare-viewer.min.js"></script>
-
+<script src="./libs/intlTelInput.js"></script>
 <script type="text/javascript" class="main-script" src="./js/scripts.min.js"></script>
 </body>
 </html>

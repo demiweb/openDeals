@@ -1242,17 +1242,17 @@
 
 
         &:nth-child(1) {
-          transform: translate(0, 0);
+          //transform: translate(0, 0);
           transition-delay: 0.4s;
         }
 
         &:nth-child(2) {
-          transform: translate(0, 0);
+          //transform: translate(0, 0);
           transition-delay: 0.8s;
         }
 
         &:nth-child(3) {
-          transform: translate(0, 0);
+          //transform: translate(0, 0);
           transition-delay: 1.2s;
         }
 
@@ -1429,7 +1429,7 @@
   &.done {
     opacity: 1;
     box-shadow: 0 0 28px #001AA0;
-    transform: scale(1) translate(0, 0) !important;
+    //transform: scale(1) translate(0, 0) !important;
 
     .text {
       opacity: 1;
@@ -1440,20 +1440,78 @@
   &[data-num="1"] {
     transform: scale(0.6) translate(0, 140px);
     transition-delay: 0.8s;
+
+    &.done {
+      transform: scale(1) translate(0, 0);
+      animation-delay: 0.4s;
+      animation: bubbleAnim 8s ease-in-out infinite !important;
+      &.bubble {
+        //transform: initial !important;
+
+      }
+    }
+
   }
+
   &[data-num="2"] {
     transform: scale(0.6) translate(0, 170px);
     transition-delay: 1.1s;
+    &.done {
+      transform: scale(1) translate(0, 0);
+      animation-delay: 0.3s;
+      animation: bubbleAnim2 7s ease-in-out infinite !important;
+      &.bubble {
+        //transform: initial !important;
+
+      }
+    }
+
   }
+
   &[data-num="3"] {
     transform: scale(0.6) translate(0, 120px);
     transition-delay: 1.5s;
+    &.done {
+      transform: scale(1) translate(0, 0);
+      animation-delay: 0.6s;
+      animation: bubbleAnim3 6s ease-in-out infinite !important;
+      &.bubble {
+        //transform: initial !important;
+
+      }
+    }
+
   }
 
 
-
-
 }
+
+@keyframes bubbleAnim {
+  0%, 100% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+@keyframes bubbleAnim2 {
+  0%, 100% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bubbleAnim3 {
+  0%, 100% {
+    transform: translateY(-24px);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+}
+
 .our-task__cont .right {
   opacity: 1;
 }
@@ -1465,6 +1523,10 @@
 
   &.our-offers__margin {
     margin-bottom: 150px;
+  }
+
+  &.single-body-course {
+    margin-top: 250px;
   }
 
   &::before {
@@ -1753,7 +1815,10 @@
       margin-left: auto;
       height: auto;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
+      flex-direction: column;
+      justify-content: center;
+
 
       p {
         font-style: normal;
@@ -1761,12 +1826,20 @@
         font-size: 64px;
         line-height: 48px;
         color: #FFFFFF;
+        text-align: right;
+        strong {
+          color: #FF0000;
+          font-weight: inherit;
+          font-size: 0.8em;
+          text-decoration: line-through;
+        }
       }
     }
   }
 
 
 }
+
 
 .big-title {
   width: 100%;
@@ -2085,6 +2158,11 @@
 }
 
 @media screen and (max-width: 1640px) {
+  .our-offers {
+    &.single-body-course {
+      margin-top: 150px;
+    }
+  }
   .our-task__cont {
     padding-top: 8%;
   }
@@ -2134,6 +2212,11 @@
 }
 
 @media screen and (max-width: 1400px) {
+  .our-offers {
+    &.single-body-course {
+      margin-top: 110px;
+    }
+  }
   .our-comments {
     .container {
       .bg {
@@ -2526,6 +2609,11 @@
 }
 
 @media screen and (max-width: 900px) {
+  .our-offers {
+    &.single-body-course {
+      margin-top: 90px;
+    }
+  }
   .doors__wave {
     margin-top: 30px;
     margin-bottom: 15px;
@@ -2915,5 +3003,65 @@
   }
   .hero-home .img-conts .img img {
     max-height: 54%;
+  }
+}
+
+.iti__country-list {
+  background: #1D1926;
+  border: 1px solid #6E7797;
+  border-radius: 15px;
+  box-shadow: 0 0 6px 1px #5afff5;
+}
+.iti__country {
+  border-bottom: 1px solid #6E7797;
+  padding: 12px 10px;
+  &.disabled {
+    pointer-events: none !important;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+  &.iti__active {
+    .iti__country-name {
+      color: #5AFFF5;
+    }
+  }
+}
+.iti__country-name, .iti__flag-box {
+  color: #fff;
+}
+.iti__dial-code {
+  color: #FF0000;
+}
+.iti__selected-flag {
+  padding-left: 10px;
+  padding-right: 12px;
+}
+.iti__arrow {
+  margin-left: 6px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #555;
+  &.iti__arrow--up {
+    border-top: none;
+    border-bottom: 7px solid #555;
+  }
+}
+.hidden-input {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .iti__selected-flag {
+    width: 310px;
+  }
+  .iti__country-name, .iti__flag-box {
+    color: #fff;
+    font-size: 10px;
+    max-width: 160px;
+    white-space: initial;
+    display: inline-block;
   }
 }

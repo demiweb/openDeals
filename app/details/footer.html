@@ -140,7 +140,7 @@
 
     </div>
 </div>
-<div class="modal-window modal-main">
+<div class="modal-window modal-main active">
     <div class="modal-logo">
         <a href="">
             <img src="./img/modal-logo.png" alt="">
@@ -183,12 +183,15 @@
                         <small>Email</small>
                     </span>
                     <span class="wrap-input required">
-                        <input type="tel" required placeholder="Телефон">
+                        <input type="tel" class="wpcf7-validates-as-tel" required placeholder="Телефон">
                         <small>Телефон</small>
                     </span>
                     <span class="wrap-input ">
                         <input type="text" placeholder="Страна">
                         <small>Страна</small>
+                    </span>
+                    <span class="hidden-input" style="display: block">
+                        <input type="text" name="full-numberPhone">
                     </span>
                 </form>
             </div>

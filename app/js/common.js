@@ -212,7 +212,6 @@ function addCoutingDelay() {
 }
 
 
-
 // scroll animations
 var anim = document.querySelectorAll('.anim')
 
@@ -232,6 +231,11 @@ function scrollAnimations() {
 
 
                     el.classList.add('done');
+                    if (el.classList.contains('circular-number')) {
+                        setTimeout(() => {
+                            el.classList.add('bubble');
+                        }, 1600)
+                    }
                     observer.unobserve(entry.target);
                 }
 
@@ -302,20 +306,37 @@ function preloading() {
                                     scrollAnimations();
                                 }, 300);
 
-                            }, 1000)
+                            }, 400)
                         }
-                    }, 31);
-            }, 300);
+                    }, 13);
+            }, 250);
 
         })
     }
 }
+
 // addCoutingDelay();
 // scrollAnimations();
 preloading();
 
 
 let commentsBlocks = [...document.querySelectorAll('.comments-list .column .comment')];
+
+
+let formSpanP = [...document.querySelectorAll('.wrap-input .wpcf7-form-control-wrap')];
+
+function addSmallHover() {
+    if (formSpanP.length) {
+        formSpanP.forEach((btn) => {
+            let inp = btn.querySelector('input');
+            let sml = document.createElement('small');
+            sml.innerHTML = inp.placeholder;
+            btn.appendChild(sml);
+        })
+    }
+}
+
+addSmallHover();
 
 function tiltingComments() {
     if (commentsBlocks.length) {
@@ -347,11 +368,26 @@ function tiltingPeoples() {
 
 tiltingPeoples();
 
-VanillaTilt.init(document.querySelector(".doors__text .text span"), {
-    max: 20,
-    speed: 400,
-    gyroscope: true,
-});
+let redBorderSpan = [...document.querySelectorAll('.doors__text .text span')];
+
+function tiltRedSpan() {
+    if (redBorderSpan.length) {
+        redBorderSpan.forEach((btn) => {
+
+            btn.setAttribute('data-tilt', '');
+            btn.setAttribute('data-tilt-full-page-listening', '');
+            btn.setAttribute('data-tilt-reset', 'false');
+            VanillaTilt.init(btn, {
+                max: 16,
+                speed: 400,
+                gyroscope: true,
+            });
+        })
+    }
+}
+
+
+tiltRedSpan();
 
 
 //marquee
@@ -424,6 +460,13 @@ function openModalWindow() {
                 e.preventDefault();
                 e.stopPropagation();
                 if (btn.classList.contains('main-mod')) {
+
+                    menuCont[0].classList.remove('opened');
+                    btn.classList.remove('opened');
+                    burger[0].classList.remove('opened');
+                    document.body.classList.remove('no-scroll');
+
+
                     document.querySelector('.modal-main').classList.add('active');
 
                 } else {
@@ -470,6 +513,71 @@ $(window).scroll(function (e) {
     $el.toggleClass('header-fixed', $(this).scrollTop() > 32);
 
 });
+
+checkorder();
+$('.course-radio input').change(function(){
+    checkorder();
+});
+function checkorder(){
+    $('.idproductform1').val($('.course-radio input:checked').val());
+    $('.nameproductform1').val($('.course-radio input:checked').parent().text());
+
+}
+
+$('.btn_submit').click(function(){
+    $(this).parent().find('form .submitform').click();
+});
+
+//form phones
+let phonesInputs = [...document.querySelectorAll('.wpcf7-validates-as-tel')];
+function tryPhoneForm() {
+    if (phonesInputs.length) {
+
+        phonesInputs.forEach((btn) => {
+            let dialCurrent = '';
+            let closestForm = btn.closest('form');
+            let hiddenInputPhone = closestForm.querySelector('.hidden-input input');
+
+            window.intlTelInput(btn, {
+                initialCountry: 'UA',
+                // hiddenInput: "full-numberPhone",
+            });
+            setTimeout(() => {
+                let allCountries = [...document.querySelectorAll('.iti__country')];
+
+                let activeLangPhone = document.querySelector('.iti__active');
+                console.log(dialCurrent);
+                dialCurrent = activeLangPhone.dataset.dialCode;
+                hiddenInputPhone.value = `+${dialCurrent}` + btn.value;
+
+
+                allCountries.forEach((cont) => {
+                    if (cont.dataset.countryCode === "ru") {
+                        cont.classList.add('disabled');
+                    }
+
+                });
+                btn.addEventListener("countrychange", function() {
+                    activeLangPhone = document.querySelector('.iti__active');
+                    console.log(dialCurrent);
+                    dialCurrent = activeLangPhone.dataset.dialCode;
+                    hiddenInputPhone.value = `+${dialCurrent}` + btn.value;
+                });
+
+                btn.addEventListener('change', () => {
+                    hiddenInputPhone.value = `+${dialCurrent}` + btn.value;
+                })
+
+            }, 600);
+
+        });
+
+    }
+}
+
+tryPhoneForm();
+
+//form phones
 
 
 

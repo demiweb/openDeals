@@ -220,13 +220,14 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
-  background: #FAFAFA;
+  background: #000;
 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff0000;
-  border: 1px solid #fff;
+  //background: #ff0000;
+  background:linear-gradient(to bottom, rgba(222, 34, 226, 1) 20%, rgba(255, 33, 33, 1) 65%, rgba(255, 33, 33, 1) 90%);
+  border: 0px solid #fff;
   box-sizing: border-box;
   border-radius: 0;
 }

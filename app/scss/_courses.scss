@@ -189,7 +189,7 @@
     animation: movingBg 18s linear infinite;
   }
 
-  &.course-hero--1 {
+  &.course-hero--Start {
     &::before {
       background: linear-gradient(360deg, #000000 0%, #8927EB 25%, #000000 44%, #4021FF 50%, #8927EB 75%, #000000 100%);
     }
@@ -212,7 +212,7 @@
     }
   }
 
-  &.course-hero--2 {
+  &.course-hero--Smart {
     &::before {
       background:  linear-gradient(360deg, #000000 0%, #4E27EB 25%, #000000 44%, #21D7FF 50%, #4E27EB 75%, #000000 100%);
 
@@ -238,7 +238,7 @@
     }
   }
 
-  &.course-hero--3 {
+  &.course-hero--Trade {
     //background: linear-gradient(360deg, #000000 0%, #EB2727 25%, #FF2199 50%, #EB2727 75%, #000000 0%);
     background-size: 100%;
     background-position: 0 50%;
@@ -282,6 +282,12 @@
       z-index: -1;
       background: linear-gradient(to top, #000 10%, rgba(255, 255, 255, 0) 100%);
     }
+  }
+}
+body.Trade {
+  .course-hero__text .tags .tag {
+    font-size: 12px;
+    line-height: 1.05;
   }
 }
 
