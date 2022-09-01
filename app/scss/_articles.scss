@@ -144,7 +144,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  &:has(.offers-text) + .our-offers__courses {
+  & + .our-offers__courses {
     margin-top: 0;
   }
 }
@@ -742,6 +742,7 @@
         position: static;
         height: 100%;
         max-height: 545px;
+        min-height: 545px;
         transform: none;
         background: var(--color2);
       }
@@ -923,6 +924,7 @@
   }
   .single-article:nth-child(7n - 1) .article-card .img, .single-article:nth-child(1) .article-card .img, .single-article:nth-child(12n - 1) .article-card .img {
     max-height: 460px;
+    min-height: 460px;
   }
   .single-article:nth-child(7n - 1) .article-card .text p, .single-article:nth-child(1) .article-card .text p, .single-article:nth-child(12n - 1) .article-card .text p {
     margin-bottom: 30px;
@@ -957,6 +959,7 @@
   }
   .single-article:nth-child(3n) .article-card .img, .single-article:nth-child(4n) .article-card .img, .single-article:nth-child(3n - 1) .article-card .img, .single-article:nth-child(8n - 1) .article-card .img, .single-article:nth-child(11n - 1) .article-card .img, .single-article:nth-child(7n - 1) .article-card .img, .single-article:nth-child(1) .article-card .img, .single-article:nth-child(12n - 1) .article-card .img {
     max-height: 180px;
+    min-height: 180px;
     top: auto;
     height: 100%;
     background: rgba(255, 255, 255, 0);
@@ -1147,7 +1150,7 @@
     font-size: 12px;
   }
   .articles-top {
-    padding: 30px 0;
+    padding: 30px 0 60px;
 
     .title {
       max-width: none;
@@ -1156,12 +1159,17 @@
     }
 
     .img {
-      height: 60px;
+      height: 50px;
       width: auto;
-      top: 50%;
-      transform: translate(0, -50%) !important;
+      top: auto;
+      bottom: 0;
+      transform: translate(0, 0) !important;
       opacity: 0.5;
       z-index: 1;
+      img, svg {
+        width: auto;
+        height: 100%;
+      }
     }
   }
   .article-cont h1, .article-cont h2, .article-cont h3, .article-cont h4, .article-cont h5, .article-cont h6 {
